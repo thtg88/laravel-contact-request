@@ -4,6 +4,7 @@ namespace Thtg88\LaravelContactRequest\Http\Controllers;
 
 use Exception;
 use Illuminate\Routing\ResponseFactory;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 use Thtg88\LaravelContactRequest\Http\Requests\SubmitContactRequestRequest;
 use Thtg88\LaravelContactRequest\Mail\ContactRequested;
