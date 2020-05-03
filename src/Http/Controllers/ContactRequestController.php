@@ -9,7 +9,7 @@ use Thtg88\LaravelContactRequest\Http\Requests\StoreContactRequestRequest;
 use Thtg88\LaravelContactRequest\Mail\ContactRequested;
 use Thtg88\LaravelContactRequest\Mail\ContactRequestedInternal;
 
-class ContactRequestControllerxw
+class ContactRequestController
 {
     /**
      * Stores a contact request.
@@ -30,7 +30,7 @@ class ContactRequestControllerxw
             // Send internal notification
             Mail::to(config('mail.internal_notification_address'))
                 ->send(new ContactRequestedInternal($input));
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             // TODO log errors?
         }
 

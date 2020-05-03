@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail;
+namespace Thtg88\LaravelContactRequest\Mail;
 
 use Illuminate\Mail\Mailable;
 

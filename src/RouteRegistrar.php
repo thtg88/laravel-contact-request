@@ -34,7 +34,7 @@ class RouteRegistrar
         $this->router->group(
             ['as' => 'laravel-contact-request.'],
             static function ($router) {
-                Route::post(
+                $router->post(
                     'contact-requests',
                     'ContactRequestController@store'
                 );

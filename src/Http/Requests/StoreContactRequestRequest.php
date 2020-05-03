@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Thtg88\LaravelContactRequest\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
