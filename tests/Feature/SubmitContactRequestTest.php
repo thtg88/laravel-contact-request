@@ -2,7 +2,11 @@
 
 namespace Thtg88\LaravelContactRequest\Tests\Feature;
 
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Thtg88\LaravelContactRequest\Mail\ContactRequested;
+use Thtg88\LaravelContactRequest\Mail\ContactRequestedInternal;
 
 class SubmitContactRequestTest extends TestCase
 {
@@ -74,6 +78,8 @@ class SubmitContactRequestTest extends TestCase
      */
     public function successful_submit(): void
     {
+        Mail::fake();
+
         $data = [
             'email' => $this->faker->safeEmail,
             'message' => $this->faker->text,
@@ -92,6 +98,23 @@ class SubmitContactRequestTest extends TestCase
                     'phone' => $data['phone'],
                 ],
             ]);
+        Mail::assertSent(
+            ContactRequestedInternal::class,
+            static function ($mail) {
+                return $mail->hasTo(
+                    Config::get(
+                        'laravel-contact-request.mail.'.
+                            'internal_notification_address'
+                    )
+                );
+            }
+        );
+        Mail::assertSent(
+            ContactRequested::class,
+            static function ($mail) use ($data) {
+                return $mail->hasTo($data['email']);
+            }
+        );
     }
 
     /**
