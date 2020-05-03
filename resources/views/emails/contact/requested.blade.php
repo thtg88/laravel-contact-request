@@ -1,4 +1,4 @@
-@extends('layouts.email')
+@extends('laravel-contact-request::layouts.email')
 @section('content')
     <p>Dear {{ $data['name'] }},</p>
     <p>We are in receipt of your email regarding your contact request.</p>

@@ -1,4 +1,4 @@
-@extends('layouts.email')
+@extends('laravel-contact-request::layouts.email')
 @section('content')
   <p>New contact request received.</p>
   <p>Details:</p>

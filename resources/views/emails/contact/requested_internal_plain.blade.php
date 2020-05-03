@@ -1,5 +1,3 @@
-@extends('layouts.email')
-@section('content')
 New contact request received.
 Details:
 Name: {{ $data['name'] }}
