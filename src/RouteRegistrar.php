@@ -36,8 +36,8 @@ class RouteRegistrar
             static function ($router) {
                 $router->post(
                     'contact-requests',
-                    'ContactRequestController@store'
-                );
+                    'ContactRequestController@submit'
+                )->name('submit');
             }
         );
     }

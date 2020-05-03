@@ -3,8 +3,9 @@
 namespace Thtg88\LaravelContactRequest\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Config;
 
-class StoreContactRequestRequest extends FormRequest
+class SubmitContactRequestRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,21 +24,26 @@ class StoreContactRequestRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'bail|required|max:255',
-            'email' => 'bail|email|required|max:255',
-            'message' => 'bail|required|max:4000',
-            'phone' => 'required|max:255',
-            'g_recaptcha_response' => [
+        $all_rules = [
+            'email' => 'required||string|email|max:255',
+            'message' => 'required|string|max:4000',
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+        ];
+
+        if (Config::get('laravel-contact-request.recaptcha.mode') === true) {
+            $all_rules['g_recaptcha_response'] = [
                 'bail',
                 'required_without:g-recaptcha-response',
                 'captcha',
-            ],
-            'g-recaptcha-response' => [
+            ];
+            $all_rules['g-recaptcha-response'] = [
                 'bail',
                 'required_without:g_recaptcha_response',
                 'captcha',
-            ],
-        ];
+            ];
+        }
+
+        return $all_rules;
     }
 }

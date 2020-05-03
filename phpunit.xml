@@ -14,7 +14,6 @@
       <testsuite name="mmCMS Test Suite">
           <directory suffix=".php">./tests/Feature</directory>
           <exclude>./tests/Feature/TestCase.php</exclude>
-          <exclude>./tests/Feature/Concerns</exclude>
       </testsuite>
   </testsuites>
   <filter>

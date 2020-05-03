@@ -5,19 +5,19 @@ namespace Thtg88\LaravelContactRequest\Http\Controllers;
 use Exception;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\Facades\Mail;
-use Thtg88\LaravelContactRequest\Http\Requests\StoreContactRequestRequest;
+use Thtg88\LaravelContactRequest\Http\Requests\SubmitContactRequestRequest;
 use Thtg88\LaravelContactRequest\Mail\ContactRequested;
 use Thtg88\LaravelContactRequest\Mail\ContactRequestedInternal;
 
 class ContactRequestController
 {
     /**
-     * Stores a contact request.
+     * Submits a contact request.
      *
-     * @param \Thtg88\LaravelContactRequest\Http\Requests\StoreContactRequestRequest $request
+     * @param \Thtg88\LaravelContactRequest\Http\Requests\SubmitContactRequestRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(StoreContactRequestRequest $request)
+    public function submit(SubmitContactRequestRequest $request)
     {
         $input = $request->validated();
 
