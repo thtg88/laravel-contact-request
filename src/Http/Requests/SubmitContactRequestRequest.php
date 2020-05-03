@@ -25,7 +25,7 @@ class SubmitContactRequestRequest extends FormRequest
     public function rules()
     {
         $all_rules = [
-            'email' => 'required||string|email|max:255',
+            'email' => 'required|string|email|max:255',
             'message' => 'required|string|max:4000',
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:255',
