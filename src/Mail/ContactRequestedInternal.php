@@ -28,8 +28,8 @@ class ContactRequestedInternal extends Mailable
     public function build()
     {
         return $this->subject('marco-marassi.com - Contact Request Notification')
-            ->view('emails.contact.requested_internal')
-            ->text('emails.contact.requested_internal_plain')
+            ->view('laravel-contact-request::emails.contact.requested_internal')
+            ->text('laravel-contact-request::emails.contact.requested_internal_plain')
             ->with('data', $this->data);
     }
 }
