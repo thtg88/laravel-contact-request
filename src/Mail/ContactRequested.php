@@ -28,8 +28,8 @@ class ContactRequested extends Mailable
     public function build()
     {
         return $this->subject('Contact Request - marco-marassi.com')
-            ->view('emails.contact.requested')
-            ->text('emails.contact.requested_plain')
+            ->view('laravel-contact-request::emails.contact.requested')
+            ->text('laravel-contact-request::emails.contact.requested_plain')
             ->with('data', $this->data);
     }
 }
