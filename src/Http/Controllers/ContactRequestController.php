@@ -28,8 +28,9 @@ class ContactRequestController
                 ->send(new ContactRequested($input));
 
             // Send internal notification
-            Mail::to(config('mail.internal_notification_address'))
-                ->send(new ContactRequestedInternal($input));
+            Mail::to(
+                Config::get('laravel-contact-request.mail.internal_notification_address')
+            )->send(new ContactRequestedInternal($input));
         } catch (Exception $e) {
             // TODO log errors?
         }
