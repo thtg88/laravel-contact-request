@@ -34,6 +34,7 @@ class ContactRequestController
             )->send(new ContactRequestedInternal($input));
         } catch (Exception $e) {
             // TODO log errors?
+            throw $e;
         }
 
         return app(ResponseFactory::class)->json([
