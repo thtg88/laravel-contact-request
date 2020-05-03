@@ -47,10 +47,13 @@ class LaravelContactRequestServiceProvider extends ServiceProvider
         );
 
         // Views
-        // $this->loadViewsFrom(__DIR__.'/../views', 'laravel-contact-request');
-        // $this->publishes([
-        //     __DIR__.'/../reousrces/views' => resource_path('views/vendor/laravel-contact-request'),
-        // ], 'views');
+        $this->loadViewsFrom(
+            __DIR__.'/../resources/views',
+            'laravel-contact-request'
+        );
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-contact-request'),
+        ], 'laravel-contact-request-views');
     }
 
     /**
