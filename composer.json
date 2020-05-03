@@ -1,0 +1,66 @@
+{
+    "name": "thtg88/laravel-contact-request",
+    "type": "library",
+    "description": "A package to send a contact request email.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Marassi",
+            "email": "admin@marco-marassi.com"
+        }
+    ],
+    "require": {
+        "anhskohbo/no-captcha": "^3.0",
+        "fruitcake/laravel-cors": "^1.0",
+        "laravel/framework": "^7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thtg88\\LaravelContactRequest\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thtg88\\LaravelContactRequest\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.1",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "mockery/mockery": "^1.3",
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "phpstan/phpstan": "^0.12.14",
+        "orchestra/testbench": "^5.1",
+        "tightenco/tlint": "^4.0"
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "vendor/bin/php-cs-fixer fix --using-cache=no --diff --dry-run && vendor/bin/tlint lint resources/views"
+            ]
+        },
+        "laravel": {
+            "providers": [
+                "Thtg88\\LaravelContactRequest\\LaravelContactRequestServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "[[ -d .git ]] && vendor/bin/cghooks add --no-lock || true"
+        ],
+        "post-update-cmd": [
+            "[[ -d .git ]] && vendor/bin/cghooks update || true"
+        ],
+        "check-style": [
+            "vendor/bin/php-cs-fixer fix --using-cache=no --diff --dry-run",
+            "vendor/bin/tlint lint resources/views"
+        ],
+        "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no",
+        "stan": [
+            "vendor/bin/phpstan analyse src",
+            "vendor/bin/phpstan analyse tests"
+        ],
+        "test": "vendor/bin/phpunit"
+    }
+}
