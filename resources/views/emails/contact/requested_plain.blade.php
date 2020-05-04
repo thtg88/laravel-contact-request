@@ -7,4 +7,4 @@ Telephone Number: {{ $data['phone'] }}
 Message: {!! nl2br(htmlspecialchars($data['message'])) !!}
 Thanks for your interest, we will contact you shortly.
 Best regards,
-Marco Marassi
+{{ Config::get('laravel-contact-request.signature_name') }}
