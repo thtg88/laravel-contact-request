@@ -3,6 +3,7 @@
 namespace Thtg88\LaravelContactRequest\Mail;
 
 use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Config;
 
 class ContactRequestedInternal extends Mailable
 {
@@ -27,9 +28,14 @@ class ContactRequestedInternal extends Mailable
      */
     public function build()
     {
-        return $this->subject('marco-marassi.com - Contact Request Notification')
-            ->view('laravel-contact-request::emails.contact.requested_internal')
-            ->text('laravel-contact-request::emails.contact.requested_internal_plain')
-            ->with('data', $this->data);
+        return $this->subject(
+            Config::get('laravel-contact-request.mail.internal_subject')
+        )->view(
+            Config::get('laravel-contact-request.views.requested_internal')
+        )->text(
+            Config::get(
+                'laravel-contact-request.views.requested_internal_plain'
+            )
+        )->with('data', $this->data);
     }
 }
