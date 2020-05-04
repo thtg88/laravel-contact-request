@@ -17,5 +17,5 @@
     </ul>
     <p>Thanks for your interest, we will contact you shortly.</p>
     <p>Best regards,<p>
-    <p>Marco Marassi</p>
+    <p>{{ Config::get('laravel-contact-request.signature_name') }}</p>
 @endsection
