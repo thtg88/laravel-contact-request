@@ -1,14 +1,18 @@
 @extends(Config::get('laravel-contact-request.mail.views.layout'))
 @section('content')
-  <p>New contact request received.</p>
-  <p>Details:</p>
-  <ul>
-    <li><strong>Name:</strong> {{ $data['name'] }}</li>
-    <li><strong>Email:</strong> {{ $data['email'] }}</li>
-    <li><strong>Telephone Number:</strong> {{ $data['phone'] }}</li>
-    <li>
-        <strong>Message:</strong>
-        {!! nl2br(htmlspecialchars($data['message'])) !!}
-    </li>
-  </ul>
+    <p>New contact request received.</p>
+    <p>Details:</p>
+    <ul>
+        @foreach ($data as $attribute => $value)
+            @if (! is_string($value))
+                @continue
+            @endif
+            <li>
+                <strong>{{
+                    ucwords(str_replace(['-', '_'], ' ', $attribute))
+                }}:</strong>
+                {!! nl2br(htmlspecialchars($value, ENT_QUOTES, 'UTF-8')) !!}
+            </li>
+        @endforeach
+    </ul>
 @endsection

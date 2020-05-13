@@ -7,13 +7,17 @@
         which will be used for our future correspondence:
     </p>
     <ul>
-        <li><strong>Name:</strong> {{ $data['name'] }}</li>
-        <li><strong>Email:</strong> {{ $data['email'] }}</li>
-        <li><strong>Telephone Number:</strong> {{ $data['phone'] }}</li>
-        <li>
-            <strong>Message:</strong>
-            {!! nl2br(htmlspecialchars($data['message'])) !!}
-        </li>
+        @foreach ($data as $attribute => $value)
+            @if (! is_string($value))
+                @continue
+            @endif
+            <li>
+                <strong>{{
+                    ucwords(str_replace(['-', '_'], ' ', $attribute))
+                }}:</strong>
+                {!! nl2br(htmlspecialchars($value, ENT_QUOTES, 'UTF-8')) !!}
+            </li>
+        @endforeach
     </ul>
     <p>Thanks for your interest, we will contact you shortly.</p>
     <p>Best regards,<p>

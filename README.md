@@ -67,6 +67,8 @@ LARAVEL_CONTACT_REQUEST_RECAPTCHA_MODE=true
 
 Laravel Contact Request will send an email confirmation of the contact request to the email provided in the request, and one to an internal recipient of your choice.
 
+The validated data will be included in both emails.
+
 You can customise the internal recipient by adding a variable to your `.env` file:
 ```
 LARAVEL_CONTACT_REQUEST_MAIL_INTERNAL_NOTIFICATION_ADDRESS=mail@example.com
