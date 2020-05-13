@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/) (or at least it tries to).
 
+## [0.9.0] - 2020-05-13
+### Added
+- Validation rules configuration option
+
 ## [0.8.1] - 2020-05-13
 ### Fixed
 - Removed loaded and published translations
