@@ -40,4 +40,10 @@ return [
     ],
     'recaptcha_mode' => env('LARAVEL_CONTACT_REQUEST_RECAPTCHA_MODE', false),
     'route_prefix' => env('LARAVEL_CONTACT_REQUEST_ROUTE_PREFIX', ''),
+    'validation_rules' => [
+        'email' => 'required|string|email|max:255',
+        'message' => 'required|string|max:4000',
+        'name' => 'required|string|max:255',
+        'phone' => 'required|string|max:255',
+    ],
 ];
