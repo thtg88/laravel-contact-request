@@ -79,19 +79,19 @@ LARAVEL_CONTACT_REQUEST_MAIL_INTERNAL_NOTIFICATION_ADDRESS=mail@example.com
 ```
 
 You can also customise the following:
-- Email to internal recipient subject: `LARAVEL_CONTACT_REQUEST_MAIL_INTERNAL_SUBJECT="Contact Request Internal Subject"`
-- Email confirmation subject to the recipient specified in the request: `LARAVEL_CONTACT_REQUEST_MAIL_SUBJECT="Contact Request Receipt"`
+- Email subject for internal recipient: `LARAVEL_CONTACT_REQUEST_MAIL_INTERNAL_SUBJECT="Contact Request Internal Subject"`
+- Email subject for confirmation email (to the recipient specified in the request): `LARAVEL_CONTACT_REQUEST_MAIL_SUBJECT="Contact Request Receipt"`
 - Signature of the email confirmation: `LARAVEL_CONTACT_REQUEST_MAIL_SIGNATURE_NAME="John Doe"`
 
-The mail views are a simple HTML, but you can customise those as well by specifying a view in your project, similarly to how you return views in controller like `view('view.name')`.
+The mail views are a simple HTML, but you can customise those as well by specifying a view name that's available in your project, similarly to how you return views in controllers e.g. `'view.name'`.
 
-- Main email HTML layout: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_LAYOUT=layouts.email`
-- Internal notification HTML view: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED_INTERNAL=emails.contact.internal`
-- Internal notification plain view: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED_INTERNAL_PLAIN=emails.contact.internal_plain`
-- Notification to recipient provided in request - HTML view: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED=emails.contact.requested`
-- Notification to recipient provided in request - plain view: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED=emails.contact.requested_plain`
+- Main email HTML layout view name: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_LAYOUT=layouts.email`
+- Internal notification HTML view name: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED_INTERNAL=emails.contact.internal`
+- Internal notification plain view name: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED_INTERNAL_PLAIN=emails.contact.internal_plain`
+- Notification to recipient provided in request - HTML view name: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED=emails.contact.requested`
+- Notification to recipient provided in request - plain view name: `LARAVEL_CONTACT_REQUEST_MAIL_VIEWS_REQUESTED=emails.contact.requested_plain`
 
-**More customisation coming soon!**
+**More customisation options coming soon!**
 
 ## License
 
