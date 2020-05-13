@@ -8,7 +8,13 @@
     </p>
     <ul>
         @foreach ($data as $attribute => $value)
-            @if (! is_string($value))
+            @if (
+                ! is_string($value) ||
+                in_array($attribute, [
+                    'g_recaptcha_response',
+                    'g-recaptcha-response',
+                ])
+            )
                 @continue
             @endif
             <li>
