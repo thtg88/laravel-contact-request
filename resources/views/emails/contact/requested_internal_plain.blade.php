@@ -4,5 +4,7 @@ Details:
     @if (! is_string($value))
         @continue
     @endif
-    {{ str_replace(['-', '_'], ' ', $attribute) }}: {!! nl2br(htmlspecialchars($data['message'], ENT_QUOTES, 'UTF-8')) !!}
+    {{ ucwords(str_replace(['-', '_'], ' ', $attribute)) }}: {!!
+        nl2br(htmlspecialchars($data['message'], ENT_QUOTES, 'UTF-8'))
+    !!}
 @endforeach

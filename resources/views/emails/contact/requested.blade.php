@@ -12,7 +12,9 @@
                 @continue
             @endif
             <li>
-                <strong>{{ str_replace(['-', '_'], ' ', $attribute) }}:</strong>
+                <strong>{{
+                    ucwords(str_replace(['-', '_'], ' ', $attribute))
+                }}:</strong>
                 {!! nl2br(htmlspecialchars($value, ENT_QUOTES, 'UTF-8')) !!}
             </li>
         @endforeach

@@ -5,7 +5,9 @@ This is the data you provided, which will be used for our future correspondence:
     @if (! is_string($value))
         @continue
     @endif
-    {{ str_replace(['-', '_'], ' ', $attribute) }}: {!! nl2br(htmlspecialchars($data['message'], ENT_QUOTES, 'UTF-8')) !!}
+    {{ ucwords(str_replace(['-', '_'], ' ', $attribute)) }}: {!!
+        nl2br(htmlspecialchars($data['message'], ENT_QUOTES, 'UTF-8'))
+    !!}
 @endforeach
 Thanks for your interest, we will contact you shortly.
 Best regards,
