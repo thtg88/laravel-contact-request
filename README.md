@@ -69,7 +69,7 @@ NOCAPTCHA_SITEKEY=YourRecaptchaSiteKey
 
 Laravel Contact Request will send an email confirmation of the contact request to the email provided in the request, and one to an internal recipient of your choice.
 
-Laravel Contact Request on the default Laravel mailer. Make sure you configure your email provider in your `.env` files. See the [Laravel docs](https://laravel.com/docs/7.x/mail) for guidance.
+Laravel Contact Request relies on the default Laravel mailer. Make sure you configure your email provider in your `.env` files. See the [Laravel docs](https://laravel.com/docs/7.x/mail) for guidance.
 
 The validated data will be included in both emails.
 
