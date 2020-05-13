@@ -30,8 +30,8 @@ class ContactRequested extends Mailable
     {
         return $this->subject(
             Config::get('laravel-contact-request.mail.subject')
-        )->view(Config::get('laravel-contact-request.views.requested'))
-            ->text(Config::get('laravel-contact-request.views.requested_plain'))
+        )->view(Config::get('laravel-contact-request.mail.views.requested'))
+            ->text(Config::get('laravel-contact-request.mail.views.requested_plain'))
             ->with('data', $this->data);
     }
 }

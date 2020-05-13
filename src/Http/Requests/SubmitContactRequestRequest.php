@@ -31,7 +31,7 @@ class SubmitContactRequestRequest extends FormRequest
             'phone' => 'required|string|max:255',
         ];
 
-        if (Config::get('laravel-contact-request.recaptcha.mode') === true) {
+        if (Config::get('laravel-contact-request.recaptcha_mode') === true) {
             $all_rules['g_recaptcha_response'] = [
                 'bail',
                 'required_without:g-recaptcha-response',

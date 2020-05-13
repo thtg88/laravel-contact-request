@@ -31,10 +31,10 @@ class ContactRequestedInternal extends Mailable
         return $this->subject(
             Config::get('laravel-contact-request.mail.internal_subject')
         )->view(
-            Config::get('laravel-contact-request.views.requested_internal')
+            Config::get('laravel-contact-request.mail.views.requested_internal')
         )->text(
             Config::get(
-                'laravel-contact-request.views.requested_internal_plain'
+                'laravel-contact-request.mail.views.requested_internal_plain'
             )
         )->with('data', $this->data);
     }

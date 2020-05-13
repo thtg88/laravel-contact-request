@@ -20,7 +20,7 @@ abstract class TestCase extends BaseTestCase
 
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('laravel-contact-request.recaptcha.mode', false);
+        $app['config']->set('laravel-contact-request.recaptcha_mode', false);
         $app['config']->set(
             'laravel-contact-request.mail.internal_notification_address',
             'mail@example.com'
