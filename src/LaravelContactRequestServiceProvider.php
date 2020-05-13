@@ -17,13 +17,12 @@ class LaravelContactRequestServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        AliasLoader::getInstance()
-            ->alias(
-                'LaravelContactRequest',
-                LaravelContactRequestFacade::class
-            );
+        AliasLoader::getInstance()->alias(
+            'LaravelContactRequest',
+            LaravelContactRequestFacade::class
+        );
 
-        $this->app->singleton('laravel-contact-request', function () {
+        $this->app->singleton('laravel-contact-request', static function () {
             return new LaravelContactRequest();
         });
 
@@ -35,16 +34,6 @@ class LaravelContactRequestServiceProvider extends ServiceProvider
 
         // Routes
         $this->loadRoutesFrom(__DIR__.'/routes.php');
-
-        // Translations
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-contact-request');
-        $this->publishes(
-            [
-                __DIR__.'/../resources/lang' => Container::getInstance()
-                    ->resourcePath('lang/vendor/laravel-contact-request'),
-            ],
-            'laravel-contact-request-translations'
-        );
 
         // Views
         $this->loadViewsFrom(
