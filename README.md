@@ -56,16 +56,20 @@ php artisan vendor:publish --provider="Thtg88\LaravelContactRequest\LaravelConta
 
 ### Captcha
 
-Laravel Contact Request supports Google ReCaptcha V2. This must be sent in a variable called `g_recaptcha_response` or `g-recaptcha-response` in the original payload.
+Laravel Contact Request supports Google ReCaptcha V2. This must be sent in a variable called `g_recaptcha_response` or `g-recaptcha-response` in the request payload.
 
 You can enable ReCaptcha V2 support by adding the following to your `.env` variable:
 ```
 LARAVEL_CONTACT_REQUEST_RECAPTCHA_MODE=true
+NOCAPTCHA_SECRET=YourReCaptchaSecretKey
+NOCAPTCHA_SITEKEY=YourRecaptchaSiteKey
 ```
 
 ### Mail
 
 Laravel Contact Request will send an email confirmation of the contact request to the email provided in the request, and one to an internal recipient of your choice.
+
+Laravel Contact Request on the default Laravel mailer. Make sure you configure your email provider in your `.env` files. See the [Laravel docs](https://laravel.com/docs/7.x/mail) for guidance.
 
 The validated data will be included in both emails.
 
