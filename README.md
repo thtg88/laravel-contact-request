@@ -19,6 +19,11 @@ Send an email from your contact form.
 composer require thtg88/laravel-contact-request
 ```
 
+You can publish the configuration file and views by running:
+```bash
+php artisan vendor:publish --provider="Thtg88\LaravelContactRequest\LaravelContactRequestServiceProvider"
+```
+
 ## Usage
 
 Laravel Contact Request exposes a route to send an email from given data.
@@ -42,6 +47,11 @@ The validation rules are the following:
 'message' => 'required|string|max:4000',
 'name' => 'required|string|max:255',
 'phone' => 'required|string|max:255',
+```
+
+You can override those validation rules by publishing the Laravel Contact Request config file and applying yours:
+```bash
+php artisan vendor:publish --provider="Thtg88\LaravelContactRequest\LaravelContactRequestServiceProvider" --tag="laravel-contact-request-config"
 ```
 
 ### Captcha
