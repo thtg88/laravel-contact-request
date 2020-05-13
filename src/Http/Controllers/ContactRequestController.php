@@ -3,6 +3,7 @@
 namespace Thtg88\LaravelContactRequest\Http\Controllers;
 
 use Exception;
+use Illuminate\Container\Container;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
@@ -29,17 +30,18 @@ class ContactRequestController
                 ->send(new ContactRequested($input));
 
             // Send internal notification
-            Mail::to(
-                Config::get('laravel-contact-request.mail.internal_notification_address')
-            )->send(new ContactRequestedInternal($input));
+            Mail::to(Config::get(
+                'laravel-contact-request.mail.internal_notification_address'
+            ))->send(new ContactRequestedInternal($input));
         } catch (Exception $e) {
             // TODO log errors?
             throw $e;
         }
 
-        return app(ResponseFactory::class)->json([
-            'success' => true,
-            'contact_request' => $input,
-        ]);
+        return Container::getInstance()
+            ->make(ResponseFactory::class)->json([
+                'success' => true,
+                'contact_request' => $input,
+            ]);
     }
 }
