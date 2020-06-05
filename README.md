@@ -75,6 +75,15 @@ Laravel Contact Request relies on the default Laravel mailer. Make sure you conf
 
 The validated data will be included in both emails.
 
+#### Deliver Later
+
+Laravel Contact Request supports placing email delivery on a queue for immediate delivery.
+
+To configure it, in your `.env` file, simply set:
+```
+LARAVEL_CONTACT_REQUEST_MAIL_DELIVER_LATER=true
+```
+
 #### Internal Recipient
 
 You can customise the internal recipient by adding a variable to your `.env` file:
