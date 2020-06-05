@@ -2,6 +2,10 @@
 
 return [
     'mail' => [
+        'deliver_later' => env(
+            'LARAVEL_CONTACT_REQUEST_MAIL_DELIVER_LATER',
+            false
+        ),
         'internal_subject' => env(
             'LARAVEL_CONTACT_REQUEST_MAIL_INTERNAL_SUBJECT',
             'Contact Request Notification'
