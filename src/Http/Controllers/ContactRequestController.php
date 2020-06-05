@@ -30,7 +30,7 @@ class ContactRequestController
             Config::get('laravel-contact-request.mail.deliver_later') === true
         ) {
             // TODO: check for specific queue type and name config variables
-            $delivery_method = 'later';
+            $delivery_method = 'queue';
         } else {
             $delivery_method = 'send';
         }
