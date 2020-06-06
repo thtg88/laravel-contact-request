@@ -84,6 +84,10 @@ To configure it, in your `.env` file, simply set:
 LARAVEL_CONTACT_REQUEST_MAIL_DELIVER_LATER=true
 ```
 
+This will leverage the `queue` method of the `Illuminate\Mail\Mailable` class, together with the default configured queue driver.
+
+For more information see the [Laravel official docs](https://laravel.com/docs/7.x/mail#queueing-mail)
+
 #### Internal Recipient
 
 You can customise the internal recipient by adding a variable to your `.env` file:
