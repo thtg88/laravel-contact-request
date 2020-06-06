@@ -10,6 +10,7 @@ Send an email from your contact form.
     * [Validation](#validation)
     * [Captcha](#captcha)
     * [Mail](#mail)
+        * [Deliver Later](#deliver-later)
         * [Internal Recipient](#internal-recipient)
         * [Additional Options](#additional-options)
 * [License](#license)
