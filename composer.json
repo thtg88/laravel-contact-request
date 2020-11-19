@@ -57,10 +57,7 @@
             "vendor/bin/tlint lint resources/views"
         ],
         "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no",
-        "stan": [
-            "vendor/bin/phpstan analyse src",
-            "vendor/bin/phpstan analyse tests"
-        ],
+        "stan": "vendor/bin/phpstan analyse --memory-limit=512M",
         "test": "vendor/bin/phpunit"
     }
 }

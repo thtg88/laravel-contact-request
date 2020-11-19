@@ -1,6 +1,9 @@
 parameters:
     # The level 7 is the highest level
     level: 1
+    paths:
+        - src
+        - tests
     ignoreErrors:
         # - '#Function factory invoked with 1 parameter, 0 required.#'
         # - '#Function factory invoked with 2 parameters, 0 required.#'
