@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Thtg88\\LaravelContactRequest\\": "src/"
+            "Thtg88\\ContactRequest\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Thtg88\\LaravelContactRequest\\Tests\\": "tests/"
+            "Thtg88\\ContactRequest\\Tests\\": "tests/"
         }
     },
     "require-dev": {
@@ -41,7 +41,7 @@
         },
         "laravel": {
             "providers": [
-                "Thtg88\\LaravelContactRequest\\LaravelContactRequestServiceProvider"
+                "Thtg88\\ContactRequest\\ContactRequestServiceProvider"
             ]
         }
     },

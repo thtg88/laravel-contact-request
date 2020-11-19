@@ -1,6 +1,6 @@
 <?php
 
-namespace Thtg88\LaravelContactRequest;
+namespace Thtg88\ContactRequest;
 
 use Illuminate\Contracts\Routing\Registrar as Router;
 
@@ -31,14 +31,10 @@ class RouteRegistrar
      */
     public function all()
     {
-        $this->router->group(
-            ['as' => 'laravel-contact-request.'],
-            static function ($router) {
-                $router->post(
-                    'contact-requests',
-                    'ContactRequestController@submit'
-                )->name('submit');
-            }
-        );
+        $this->router
+            ->group(['as' => 'contact-request.'], static function ($router) {
+                $router->post('contact-requests', 'ContactRequestController@submit')
+                    ->name('submit');
+            });
     }
 }

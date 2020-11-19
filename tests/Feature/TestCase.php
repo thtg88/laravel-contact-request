@@ -1,11 +1,11 @@
 <?php
 
-namespace Thtg88\LaravelContactRequest\Tests\Feature;
+namespace Thtg88\ContactRequest\Tests\Feature;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use Thtg88\LaravelContactRequest\LaravelContactRequest;
-use Thtg88\LaravelContactRequest\LaravelContactRequestServiceProvider;
-use Thtg88\LaravelContactRequest\Tests\TestCase as BaseTestCase;
+use Thtg88\ContactRequest\ContactRequest;
+use Thtg88\ContactRequest\ContactRequestServiceProvider;
+use Thtg88\ContactRequest\Tests\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -15,14 +15,14 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        LaravelContactRequest::routes();
+        ContactRequest::routes();
     }
 
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('laravel-contact-request.recaptcha_mode', false);
+        $app['config']->set('contact-request.recaptcha_mode', false);
         $app['config']->set(
-            'laravel-contact-request.mail.internal_notification_address',
+            'contact-request.mail.internal_notification_address',
             'mail@example.com'
         );
     }
@@ -31,11 +31,11 @@ abstract class TestCase extends BaseTestCase
      * Load package service provider
      *
      * @param \Illuminate\Foundation\Application $app
-     * @return Thtg88\LaravelContactRequest\LaravelContactRequestServiceProvider
+     * @return Thtg88\ContactRequest\ContactRequestServiceProvider
      */
     protected function getPackageProviders($app)
     {
-        return [LaravelContactRequestServiceProvider::class];
+        return [ContactRequestServiceProvider::class];
     }
 
     /**

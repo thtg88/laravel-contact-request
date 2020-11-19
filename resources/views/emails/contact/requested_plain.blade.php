@@ -14,4 +14,4 @@ This is the data you provided, which will be used for our future correspondence:
 @endforeach
 Thanks for your interest, we will contact you shortly.
 Best regards,
-{{ Config::get('laravel-contact-request.mail.signature_name') }}
+{{ Config::get('contact-request.mail.signature_name') }}

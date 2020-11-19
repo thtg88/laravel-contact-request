@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Config;
-use Thtg88\LaravelContactRequest\LaravelContactRequest;
+use Thtg88\ContactRequest\ContactRequest;
 
-LaravelContactRequest::routes(null, [
-    'prefix' => Config::get('laravel-contact-request.route_prefix'),
+ContactRequest::routes(null, [
+    'prefix' => Config::get('contact-request.route_prefix'),
 ]);
