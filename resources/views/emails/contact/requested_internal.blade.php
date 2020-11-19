@@ -1,4 +1,4 @@
-@extends(Config::get('laravel-contact-request.mail.views.layout'))
+@extends(Config::get('contact-request.mail.views.layout'))
 @section('content')
     <p>New contact request received.</p>
     <p>Details:</p>

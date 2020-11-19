@@ -1,6 +1,6 @@
 <?php
 
-namespace Thtg88\LaravelContactRequest\Mail;
+namespace Thtg88\ContactRequest\Mail;
 
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Config;
@@ -28,10 +28,9 @@ class ContactRequested extends Mailable
      */
     public function build()
     {
-        return $this->subject(
-            Config::get('laravel-contact-request.mail.subject')
-        )->view(Config::get('laravel-contact-request.mail.views.requested'))
-            ->text(Config::get('laravel-contact-request.mail.views.requested_plain'))
+        return $this->subject(Config::get('contact-request.mail.subject'))
+            ->view(Config::get('contact-request.mail.views.requested'))
+            ->text(Config::get('contact-request.mail.views.requested_plain'))
             ->with('data', $this->data);
     }
 }

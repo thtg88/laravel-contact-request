@@ -1,6 +1,6 @@
 <?php
 
-namespace Thtg88\LaravelContactRequest\Http\Requests;
+namespace Thtg88\ContactRequest\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Config;
@@ -24,9 +24,9 @@ class SubmitContactRequestRequest extends FormRequest
      */
     public function rules()
     {
-        $all_rules = Config::get('laravel-contact-request.validation_rules');
+        $all_rules = Config::get('contact-request.validation_rules');
 
-        if (Config::get('laravel-contact-request.recaptcha_mode') === true) {
+        if (Config::get('contact-request.recaptcha_mode') === true) {
             $all_rules['g_recaptcha_response'] = [
                 'bail',
                 'required_without:g-recaptcha-response',

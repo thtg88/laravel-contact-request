@@ -1,4 +1,4 @@
-@extends(Config::get('laravel-contact-request.mail.views.layout'))
+@extends(Config::get('contact-request.mail.views.layout'))
 @section('content')
     <p>Dear {{ $data['name'] }},</p>
     <p>We are in receipt of your email regarding your contact request.</p>
@@ -27,5 +27,5 @@
     </ul>
     <p>Thanks for your interest, we will contact you shortly.</p>
     <p>Best regards,<p>
-    <p>{{ Config::get('laravel-contact-request.mail.signature_name') }}</p>
+    <p>{{ Config::get('contact-request.mail.signature_name') }}</p>
 @endsection

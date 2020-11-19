@@ -1,12 +1,12 @@
 <?php
 
-namespace Thtg88\LaravelContactRequest\Tests\Feature;
+namespace Thtg88\ContactRequest\Tests\Feature;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use Thtg88\LaravelContactRequest\Mail\ContactRequested;
-use Thtg88\LaravelContactRequest\Mail\ContactRequestedInternal;
+use Thtg88\ContactRequest\Mail\ContactRequested;
+use Thtg88\ContactRequest\Mail\ContactRequestedInternal;
 
 class SubmitContactRequestTest extends TestCase
 {
@@ -102,10 +102,7 @@ class SubmitContactRequestTest extends TestCase
             ContactRequestedInternal::class,
             static function ($mail) {
                 return $mail->hasTo(
-                    Config::get(
-                        'laravel-contact-request.mail.'.
-                            'internal_notification_address'
-                    )
+                    Config::get('contact-request.mail.internal_notification_address')
                 );
             }
         );
@@ -125,6 +122,6 @@ class SubmitContactRequestTest extends TestCase
      */
     public function getRoute(array $parameters = []): string
     {
-        return route('laravel-contact-request.submit');
+        return route('contact-request.submit');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Thtg88\LaravelContactRequest\Tests;
+namespace Thtg88\ContactRequest\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 

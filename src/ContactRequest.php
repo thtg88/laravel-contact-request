@@ -1,10 +1,10 @@
 <?php
 
-namespace Thtg88\LaravelContactRequest;
+namespace Thtg88\ContactRequest;
 
 use Illuminate\Support\Facades\Route;
 
-class LaravelContactRequest
+class ContactRequest
 {
     /**
      * Binds the mmCMS routes into the controller.
@@ -20,7 +20,7 @@ class LaravelContactRequest
         };
 
         $defaultOptions = [
-            'namespace' => '\Thtg88\LaravelContactRequest\Http\Controllers',
+            'namespace' => '\Thtg88\ContactRequest\Http\Controllers',
         ];
 
         $options = array_merge($defaultOptions, $options);
