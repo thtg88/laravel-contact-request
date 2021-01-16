@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/) (or at least it tries to).
 
+## [0.14.0] - 2021-01-16
+### Added
+- PHP 8 Support
+
 ## [0.13.0] - 2020-11-19
 ### Changed
 - Refactor to remove `Laravel` from namespaces and config variables
