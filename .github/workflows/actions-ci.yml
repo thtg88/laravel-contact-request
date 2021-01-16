@@ -20,4 +20,4 @@ jobs:
       run: composer run-script stan
 
     - name: Run test suite
-      run: COMPOSER_PROCESS_TIMEOUT=600 composer run-script test
+      run: composer run-script test -- --stop-on-failure
