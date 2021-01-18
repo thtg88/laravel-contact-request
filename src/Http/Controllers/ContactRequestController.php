@@ -17,6 +17,7 @@ class ContactRequestController
      * Submits a contact request.
      *
      * @param \Thtg88\ContactRequest\Http\Requests\SubmitContactRequestRequest $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function submit(SubmitContactRequestRequest $request)
@@ -49,7 +50,7 @@ class ContactRequestController
         }
 
         return Container::getInstance()->make(ResponseFactory::class)->json([
-            'success' => true,
+            'success'         => true,
             'contact_request' => $input,
         ]);
     }

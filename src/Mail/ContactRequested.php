@@ -13,7 +13,8 @@ class ContactRequested extends Mailable
     /**
      * Create a new message instance.
      *
-     * @param array  $data
+     * @param array $data
+     *
      * @return void
      */
     public function __construct(array $data)
