@@ -28,9 +28,10 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * Load package service provider
+     * Load package service provider.
      *
      * @param \Illuminate\Foundation\Application $app
+     *
      * @return Thtg88\ContactRequest\ContactRequestServiceProvider
      */
     protected function getPackageProviders($app)
@@ -42,6 +43,7 @@ abstract class TestCase extends BaseTestCase
      * Return the route to use for these tests from a given parameters array.
      *
      * @param array $parameters
+     *
      * @return string
      */
     abstract public function getRoute(array $parameters = []): string;

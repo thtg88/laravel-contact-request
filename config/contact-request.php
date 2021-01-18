@@ -15,7 +15,7 @@ return [
             null
         ),
         'signature_name' => env('CONTACT_REQUEST_MAIL_SIGNATURE_NAME', ''),
-        'subject' => env(
+        'subject'        => env(
             'CONTACT_REQUEST_MAIL_SUBJECT',
             'Contact Request'
         ),
@@ -42,12 +42,12 @@ return [
             ),
         ],
     ],
-    'recaptcha_mode' => env('CONTACT_REQUEST_RECAPTCHA_MODE', false),
-    'route_prefix' => env('CONTACT_REQUEST_ROUTE_PREFIX', ''),
+    'recaptcha_mode'   => env('CONTACT_REQUEST_RECAPTCHA_MODE', false),
+    'route_prefix'     => env('CONTACT_REQUEST_ROUTE_PREFIX', ''),
     'validation_rules' => [
-        'email' => 'required|string|email|max:255',
+        'email'   => 'required|string|email|max:255',
         'message' => 'required|string|max:4000',
-        'name' => 'required|string|max:255',
-        'phone' => 'required|string|max:255',
+        'name'    => 'required|string|max:255',
+        'phone'   => 'required|string|max:255',
     ],
 ];
