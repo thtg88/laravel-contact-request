@@ -11,7 +11,6 @@ use Thtg88\ContactRequest\Mail\ContactRequestedInternal;
 class SubmitContactRequestTest extends TestCase
 {
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -28,7 +27,6 @@ class SubmitContactRequestTest extends TestCase
     }
 
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -50,7 +48,6 @@ class SubmitContactRequestTest extends TestCase
     }
 
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -64,15 +61,14 @@ class SubmitContactRequestTest extends TestCase
         ]);
         $response->assertStatus(422)
             ->assertJsonValidationErrors([
-                'email'   => 'The email may not be greater than 255 characters.',
-                'message' => 'The message may not be greater than 4000 characters.',
-                'name'    => 'The name may not be greater than 255 characters.',
-                'phone'   => 'The phone may not be greater than 255 characters.',
+                'email'   => 'The email must not be greater than 255 characters.',
+                'message' => 'The message must not be greater than 4000 characters.',
+                'name'    => 'The name must not be greater than 255 characters.',
+                'phone'   => 'The phone must not be greater than 255 characters.',
             ]);
     }
 
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -117,11 +113,9 @@ class SubmitContactRequestTest extends TestCase
     /**
      * Return the route to use for these tests from a given parameters array.
      *
-     * @param array $parameters
-     *
      * @return string
      */
-    public function getRoute(array $parameters = []): string
+    public function getRoute(): string
     {
         return route('contact-request.submit');
     }
