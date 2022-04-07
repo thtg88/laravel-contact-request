@@ -2,7 +2,6 @@
 
 namespace Thtg88\ContactRequest;
 
-use Illuminate\Container\Container;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 use Thtg88\ContactRequest\ContactRequest as ContactRequestFacade;
