@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Config;
 
 class ContactRequested extends Mailable
 {
-    /** @var array */
+    /** @var array<string, string> */
     protected $data;
 
     /**
      * Create a new message instance.
      *
-     * @param array $data
+     * @param array<string, string> $data
      *
      * @return void
      */
@@ -25,7 +25,7 @@ class ContactRequested extends Mailable
     /**
      * Build the message.
      *
-     * @return $this
+     * @return static
      */
     public function build()
     {

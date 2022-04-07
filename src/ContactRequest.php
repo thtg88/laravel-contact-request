@@ -9,8 +9,8 @@ class ContactRequest
     /**
      * Binds the mmCMS routes into the controller.
      *
-     * @param callable|null $callback
-     * @param array         $options
+     * @param callable|null        $callback
+     * @param array<string,string> $options
      *
      * @return void
      */

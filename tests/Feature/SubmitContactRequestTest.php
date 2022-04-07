@@ -11,7 +11,6 @@ use Thtg88\ContactRequest\Mail\ContactRequestedInternal;
 class SubmitContactRequestTest extends TestCase
 {
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -28,7 +27,6 @@ class SubmitContactRequestTest extends TestCase
     }
 
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -50,7 +48,6 @@ class SubmitContactRequestTest extends TestCase
     }
 
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -72,7 +69,6 @@ class SubmitContactRequestTest extends TestCase
     }
 
     /**
-     * @return void
      * @group crud
      * @test
      */
@@ -117,11 +113,9 @@ class SubmitContactRequestTest extends TestCase
     /**
      * Return the route to use for these tests from a given parameters array.
      *
-     * @param array $parameters
-     *
      * @return string
      */
-    public function getRoute(array $parameters = []): string
+    public function getRoute(): string
     {
         return route('contact-request.submit');
     }
