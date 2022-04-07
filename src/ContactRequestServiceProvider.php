@@ -2,9 +2,7 @@
 
 namespace Thtg88\ContactRequest;
 
-use Illuminate\Container\Container;
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Thtg88\ContactRequest\ContactRequest as ContactRequestFacade;
 
@@ -28,8 +26,7 @@ class ContactRequestServiceProvider extends ServiceProvider
 
         // Config
         $this->publishes([
-            __DIR__.'/../config/contact-request.php' => Container::getInstance()
-                ->configPath('contact-request.php'),
+            __DIR__.'/../config/contact-request.php' => config_path('contact-request.php'),
         ], 'contact-request-config');
 
         // Routes
@@ -46,8 +43,6 @@ class ContactRequestServiceProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -60,6 +55,9 @@ class ContactRequestServiceProvider extends ServiceProvider
         $this->app->alias(ContactRequest::class, 'contact-request');
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function provides(): array
     {
         return ['contact-request'];
