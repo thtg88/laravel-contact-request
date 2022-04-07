@@ -2,7 +2,6 @@
 
 namespace Thtg88\ContactRequest\Http\Controllers;
 
-use Exception;
 use Illuminate\Container\Container;
 use Illuminate\Routing\ResponseFactory;
 use Thtg88\ContactRequest\Http\Requests\SubmitContactRequestRequest;
