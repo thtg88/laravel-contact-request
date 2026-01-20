@@ -42,10 +42,10 @@ class SubmitContactRequestTest extends TestCase
         ]);
         $response->assertStatus(422)
             ->assertJsonValidationErrors([
-                'email'   => 'The email must be a string.',
-                'message' => 'The message must be a string.',
-                'name'    => 'The name must be a string.',
-                'phone'   => 'The phone must be a string.',
+                'email'   => 'The email field must be a string.',
+                'message' => 'The message field must be a string.',
+                'name'    => 'The name field must be a string.',
+                'phone'   => 'The phone field must be a string.',
             ]);
     }
 
@@ -64,10 +64,10 @@ class SubmitContactRequestTest extends TestCase
         ]);
         $response->assertStatus(422)
             ->assertJsonValidationErrors([
-                'email'   => 'The email must not be greater than 255 characters.',
-                'message' => 'The message must not be greater than 4000 characters.',
-                'name'    => 'The name must not be greater than 255 characters.',
-                'phone'   => 'The phone must not be greater than 255 characters.',
+                'email'   => 'The email field must not be greater than 255 characters.',
+                'message' => 'The message field must not be greater than 4000 characters.',
+                'name'    => 'The name field must not be greater than 255 characters.',
+                'phone'   => 'The phone field must not be greater than 255 characters.',
             ]);
     }
 
