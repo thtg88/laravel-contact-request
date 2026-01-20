@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/) (or at least it tries to).
 
+## [0.17.0] - 2026-01-20
+
+### Added
+
+- PHP 8.2 support
+- Laravel 9 support
+
+### Removed
+
+- PHP 7.3 support
+- PHP 8.0 support
+- Laravel 7 support
+- Laravel 8 support
+
 ## [0.16.0] - 2022-04-07
 ### Added
 - ContactRequestService so it can be used independently from the controller's response
