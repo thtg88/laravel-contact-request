@@ -11,8 +11,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "anhskohbo/no-captcha": "^3.4",
-        "laravel/framework": "^11.0"
+        "anhskohbo/no-captcha": "^3.7",
+        "laravel/framework": "^12.0"
     },
     "autoload": {
         "psr-4": {
@@ -25,11 +25,11 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.0",
+        "phpunit/phpunit": "^11.0",
         "mockery/mockery": "^1.3",
         "brainmaestro/composer-git-hooks": "^3.0",
         "phpstan/phpstan": "^1.5.4",
-        "orchestra/testbench": "^9.0",
+        "orchestra/testbench": "^10.0",
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "extra": {
@@ -58,10 +58,5 @@
         "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no",
         "stan": "vendor/bin/phpstan analyse --memory-limit=512M",
         "test": "vendor/bin/phpunit"
-    },
-    "config": {
-        "audit": {
-            "block-insecure": false
-        }
     }
 }
