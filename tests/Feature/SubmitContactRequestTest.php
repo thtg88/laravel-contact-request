@@ -12,6 +12,7 @@ class SubmitContactRequestTest extends TestCase
 {
     /**
      * @group crud
+     *
      * @test
      */
     public function empty_payload_has_required_validation_errors(): void
@@ -28,6 +29,7 @@ class SubmitContactRequestTest extends TestCase
 
     /**
      * @group crud
+     *
      * @test
      */
     public function strings_validation_errors(): void
@@ -49,6 +51,7 @@ class SubmitContactRequestTest extends TestCase
 
     /**
      * @group crud
+     *
      * @test
      */
     public function too_long_strings_have_max_validation_errors(): void
@@ -70,6 +73,7 @@ class SubmitContactRequestTest extends TestCase
 
     /**
      * @group crud
+     *
      * @test
      */
     public function successful_submit(): void
